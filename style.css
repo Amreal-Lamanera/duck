@@ -9,7 +9,7 @@
 html {
     font-family: 'Roboto', sans-serif;
     height: 100%;
-    background: linear-gradient(#3535EC , #B62879);
+    background: linear-gradient(rgb(43, 43, 43) 20% , rgb(164, 2, 121));
     background-attachment: fixed;
     color: white; /*Tutto il testo della pagina è bianco*/
 }
@@ -18,6 +18,20 @@ html {
 img {
     /* Larghezza massima non può su perare quella del proprio contenitore */
     max-width: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    color: #33baf3;
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+header img {
+    margin-bottom: 15px;
+    margin-right: -5px;
 }
 
 .container {
@@ -36,6 +50,7 @@ header img {
 
 /* Casella di testo */
 textarea {
+    background-color: grey;
     margin-top: 32px;
     margin-bottom: 32px;
     width: 100%;
@@ -53,6 +68,10 @@ textarea {
     font-family: 'Roboto', sans-serif;
 }
 
+textarea::placeholder {
+    color: black;
+}
+
 .controls {
     /* Per disporre gli elementi di fianco */
     display: flex;
@@ -66,7 +85,7 @@ button {
     height: 56px;
     border-radius: 8px;
     border: none;
-    background-color: #F81669;
+    background-color: #a40279;
 }
 
 
@@ -78,9 +97,9 @@ button:disabled {
 }
 
 /* Non funzionerà su telefono */
-button:hover {
+/* button:hover {
     transform: scale(1.2);
-}
+} */
 
 /* Quando tengo schiacciato il bottone */
 button:active {
