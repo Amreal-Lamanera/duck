@@ -10,15 +10,8 @@ const playButton = document.querySelector('button');
 const pitchBar = document.getElementById('pitch');
 const duckFigure = document.querySelector('figure');
 
-let interactionEvent;
-if('ontouchend' in document.documentElement) {
-    interactionEvent = 'touchend'; 
-} else {
-    interactionEvent = 'click';
-}
-
 // Osserviamo il tasto play per vedere se qualcuno lo clicca - se qualcuno clicca il bottone fa quello che ti dico
-playButton.addEventListener(interactionEvent , function(){
+playButton.addEventListener('touchend' , function(){
     // Istruzioni in caso di click
     // Prima controllo se c'è effettivamente testo - devo anche controllare che non ci siano spazi prima e dopo - trim elimina gli spazi
     const textLength = textArea.value.trim().length;
@@ -42,13 +35,13 @@ function talk() {
     utterance.pitch = pitch;
 
     // Voce femminile
-    const femaleVoice = voices.find(function(voice){
-        if(voice.name.includes('Elsa') || voice.name.includes('Alice')) {
-            return true;
-        }
-    });
+    // const femaleVoice = voices.find(function(voice){
+    //     if(voice.name.includes('Elsa') || voice.name.includes('Alice')) {
+    //         return true;
+    //     }
+    // });
 
-    utterance.voice = femaleVoice;
+    // utterance.voice = femaleVoice;
 
     // Facciamo parlare la paperella
     speechSynthesis.speak(utterance);

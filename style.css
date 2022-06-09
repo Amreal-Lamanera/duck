@@ -81,13 +81,13 @@ header img {
 }
 
 /* Bottone play */
-button {
+/* button {
     width: 64px;
     height: 56px;
     border-radius: 8px;
     border: none;
     background-color: #a40279;
-}
+} */
 
 
 /* intercetto disabled di JS - :disabled è una pseudoclasse
