@@ -35,13 +35,13 @@ function talk() {
     utterance.pitch = pitch;
 
     // Voce femminile
-    const femaleVoice = voices.find(function(voice){
-        if(voice.name.includes('Elsa') || voice.name.includes('Alice')) {
-            return true;
-        }
-    });
+    // const femaleVoice = voices.find(function(voice){
+    //     if(voice.name.includes('Elsa') || voice.name.includes('Alice')) {
+    //         return true;
+    //     }
+    // });
 
-    utterance.voice = femaleVoice;
+    // utterance.voice = femaleVoice;
 
     // Facciamo parlare la paperella
     speechSynthesis.speak(utterance);
