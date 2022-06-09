@@ -5,9 +5,9 @@ speechSynthesis.addEventListener('voiceschanged', function(){
 })
 
 // Primo step: prendere da html tutti gli elementi che ci servono in JS, quindi: contenuto TA, tasto play, barra del pitch e il tag figure
-const textArea = document.querySelector('textarea');
+const textArea = document.getElementById('textarea');
 const playButton = document.querySelector('button');
-const pitchBar = document.querySelector('input');
+const pitchBar = document.getElementById('pitch');
 const duckFigure = document.querySelector('figure');
 
 let interactionEvent;
