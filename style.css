@@ -102,9 +102,9 @@ button:disabled {
 } */
 
 /* Quando tengo schiacciato il bottone */
-button:active {
+/* button:active {
     transform: scale(0.8);
-}
+} */
 
 /* Centro l'img dentro al bottone */
 button img {
