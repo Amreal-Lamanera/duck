@@ -91,10 +91,10 @@ button {
 
 /* intercetto disabled di JS - :disabled è una pseudoclasse
 Stile del bottone solo quando è disabled */
-button:disabled {
+/* button:disabled {
     opacity: 0.6;
     background-color: #dedede;
-}
+} */
 
 /* Non funzionerà su telefono */
 /* button:hover {
@@ -107,9 +107,9 @@ button:disabled {
 } */
 
 /* Centro l'img dentro al bottone */
-button img {
+/* button img {
     vertical-align: middle;
-}
+} */
 
 /* Controlli del tono */
 .control-pitch {
