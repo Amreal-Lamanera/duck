@@ -11,7 +11,7 @@ const pitchBar = document.querySelector('input');
 const duckFigure = document.querySelector('figure');
 
 // Osserviamo il tasto play per vedere se qualcuno lo clicca - se qualcuno clicca il bottone fa quello che ti dico
-playButton.addEventListener('click' , function(){
+playButton.addEventListener('touchend' , function(){
     // Istruzioni in caso di click
     // Prima controllo se c'è effettivamente testo - devo anche controllare che non ci siano spazi prima e dopo - trim elimina gli spazi
     const textLength = textArea.value.trim().length;
