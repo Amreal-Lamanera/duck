@@ -1,0 +1,125 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Regole Generiche della Pagina Web */
+html {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    background: linear-gradient(#3535EC , #B62879);
+    background-attachment: fixed;
+    color: white; /*Tutto il testo della pagina è bianco*/
+}
+
+/* Altra regola generica per non far andare le immagini oltre i propri contenitori */
+img {
+    /* Larghezza massima non può su perare quella del proprio contenitore */
+    max-width: 100%;
+}
+
+.container {
+    /* Centro il contenuto della pagina, creando un piccolo bordo a dx e sx */
+    width: 90%;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* Logo */
+header img {
+    width: 56px;
+    /* Height è implicita in realtà */
+    height: auto;
+}
+
+/* Casella di testo */
+textarea {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 100%;
+    height: 120px;
+    /* Tolgo possibilità di allargare la TA */
+    resize: none;
+    /* Tolgo il bordo colorato */
+    outline: none;
+    border: none;
+
+    border-radius: 16px;
+    font-size: 20px;
+    padding: 24px;
+    /* TA richiede la forzatura del cambiamento del font */
+    font-family: 'Roboto', sans-serif;
+}
+
+.controls {
+    /* Per disporre gli elementi di fianco */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+/* Bottone play */
+button {
+    width: 64px;
+    height: 56px;
+    border-radius: 8px;
+    border: none;
+    background-color: #F81669;
+}
+
+
+/* intercetto disabled di JS - :disabled è una pseudoclasse
+Stile del bottone solo quando è disabled */
+button:disabled {
+    opacity: 0.6;
+    background-color: #dedede;
+}
+
+/* Non funzionerà su telefono */
+button:hover {
+    transform: scale(1.2);
+}
+
+/* Quando tengo schiacciato il bottone */
+button:active {
+    transform: scale(0.8);
+}
+
+/* Centro l'img dentro al bottone */
+button img {
+    vertical-align: middle;
+}
+
+/* Controlli del tono */
+.control-pitch {
+    width: 70%;
+}
+
+/* Barra del Tono */
+input {
+    width: 100%;
+    /* Pallina di scorrimento */
+    accent-color: white;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* Paperelle */
+.animated-duck {
+    display: none;
+}
+
+/* Useremo JS per togliere e mettere la classe talking */
+.talking .animated-duck {
+    display: block;
+}
+
+.talking .static-duck {
+    display: none;
+}
