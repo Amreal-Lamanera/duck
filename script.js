@@ -1,9 +1,9 @@
 // Voce femminile x chrome
 // Carico le voci per dare il tempo al browser di caricarle -> voiceschanged
-let voices = [];
-speechSynthesis.addEventListener('voiceschanged', function () {
-    voices = speechSynthesis.getVoices();
-})
+// let voices = [];
+// speechSynthesis.addEventListener('voiceschanged', function () {
+//     voices = speechSynthesis.getVoices();
+// })
 
 // Primo step: prendere da html tutti gli elementi che ci servono in JS, quindi: contenuto TA, tasto play, barra del pitch e il tag figure
 const textArea = document.querySelector('textarea');
