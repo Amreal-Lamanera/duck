@@ -1,8 +1,9 @@
+// Voce femminile x chrome
 // Carico le voci per dare il tempo al browser di caricarle -> voiceschanged
-let voices = [];
-speechSynthesis.addEventListener('voiceschanged', function () {
-    voices = speechSynthesis.getVoices();
-})
+// let voices = [];
+// speechSynthesis.addEventListener('voiceschanged', function () {
+//     voices = speechSynthesis.getVoices();
+// })
 
 // Primo step: prendere da html tutti gli elementi che ci servono in JS, quindi: contenuto TA, tasto play, barra del pitch e il tag figure
 const textArea = document.querySelector('textarea');
@@ -42,19 +43,17 @@ function talk() {
     utterance.rate = 1;
     utterance.pitch = pitch;
 
-    // Voce femminile
-    // let femaleVoice;
+    // Voce femminile x chrome
+    // const femaleVoice = voices.find(function (voice) {
+    //     if (voice.name.includes('Elsa')) {
+    //         return true;
+    //     }
+    // });
 
-    const femaleVoice = voices.find(function (voice) {
-        if (voice.name.includes('Elsa')) {
-            return true;
-        }
-    });
-
-    if(femaleVoice != null){
-        utterance.voice = femaleVoice;
-        window.alert(utterance.voice);
-    }
+    // if(femaleVoice != null){
+    //     utterance.voice = femaleVoice;
+    //     // window.alert(utterance.voice);
+    // }
 
     // Facciamo parlare la paperella
     speechSynthesis.speak(utterance);
