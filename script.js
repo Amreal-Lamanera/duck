@@ -1,8 +1,8 @@
 // Carico le voci per dare il tempo al browser di caricarle -> voiceschanged
-let voices = [];
-speechSynthesis.addEventListener('voiceschanged', function(){
-    voices = speechSynthesis.getVoices();
-})
+// let voices = [];
+// speechSynthesis.addEventListener('voiceschanged', function(){
+//     voices = speechSynthesis.getVoices();
+// })
 
 // Primo step: prendere da html tutti gli elementi che ci servono in JS, quindi: contenuto TA, tasto play, barra del pitch e il tag figure
 const textArea = document.querySelector('textarea');
@@ -11,8 +11,8 @@ const pitchBar = document.querySelector('input');
 const duckFigure = document.querySelector('figure');
 
 let interactionEvent;
-if('ontouchend' in document.documentElement) {
-    interactionEvent = 'touchend'; 
+if('ontouch' in document.documentElement) {
+    interactionEvent = 'touch'; 
 } else {
     interactionEvent = 'click';
 }
@@ -22,10 +22,10 @@ playButton.addEventListener(interactionEvent , function(){
     // Istruzioni in caso di click
     // Prima controllo se c'è effettivamente testo - devo anche controllare che non ci siano spazi prima e dopo - trim elimina gli spazi
     const textLength = textArea.value.trim().length;
+    alert(textLength);
     if(textLength > 0) {
         talk();
-    }
-});
+}});
 
 // Funzione per far parlare la paperella
 function talk() {
@@ -42,7 +42,7 @@ function talk() {
     utterance.pitch = pitch;
 
     // Voce femminile
-    let femaleVoice;
+    // let femaleVoice;
     
     // HO FATTO CASINO -> SISTEMARE  
     // if((function(voice){
