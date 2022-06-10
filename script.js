@@ -44,20 +44,23 @@ function talk() {
     utterance.pitch = pitch;
 
     // Voce femminile x chrome
-    let femaleVoice = null;
-    femaleVoice = voices.find(function (voice) {
-        if (voice.name.includes('Elsa')) {
-            return true;
-        }
-    });
+    // let femaleVoice = null;
+    // femaleVoice = voices.find(function (voice) {
+    //     if (voice.name.includes('Elsa')) {
+    //         return true;
+    //     }
+    // });
 
-    if(femaleVoice != null){
-        utterance.voice = femaleVoice;
-        // window.alert(utterance.voice);
-    }
+    // if(femaleVoice != null){
+    //     utterance.voice = femaleVoice;
+    //     // window.alert(utterance.voice);
+    // }
 
     // Facciamo parlare la paperella
     speechSynthesis.speak(utterance);
+
+    window.alert(voices);
+
     // Su desktop parla al maschile, su mobile al femminile
 
     // Quando la paperella inizia a parlare
