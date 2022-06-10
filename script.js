@@ -22,7 +22,7 @@ playButton.addEventListener(interactionEvent , function(){
     // Istruzioni in caso di click
     // Prima controllo se c'è effettivamente testo - devo anche controllare che non ci siano spazi prima e dopo - trim elimina gli spazi
     const textLength = textArea.value.trim().length;
-    alert(textLength);
+    // alert(textLength);
     if(textLength > 0) {
         talk();
 }});
