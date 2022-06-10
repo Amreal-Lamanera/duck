@@ -1,8 +1,8 @@
 // Carico le voci per dare il tempo al browser di caricarle -> voiceschanged
-// let voices = [];
-// speechSynthesis.addEventListener('voiceschanged', function(){
-//     voices = speechSynthesis.getVoices();
-// })
+let voices = [];
+speechSynthesis.addEventListener('voiceschanged', function () {
+    voices = speechSynthesis.getVoices();
+})
 
 // Primo step: prendere da html tutti gli elementi che ci servono in JS, quindi: contenuto TA, tasto play, barra del pitch e il tag figure
 const textArea = document.querySelector('textarea');
@@ -11,21 +11,22 @@ const pitchBar = document.querySelector('input');
 const duckFigure = document.querySelector('figure');
 
 let interactionEvent;
-if('ontouch' in document.documentElement) {
-    interactionEvent = 'touch'; 
+if ('ontouch' in document.documentElement) {
+    interactionEvent = 'touch';
 } else {
     interactionEvent = 'click';
 }
 
 // Osserviamo il tasto play per vedere se qualcuno lo clicca - se qualcuno clicca il bottone fa quello che ti dico
-playButton.addEventListener(interactionEvent , function(){
+playButton.addEventListener(interactionEvent, function () {
     // Istruzioni in caso di click
     // Prima controllo se c'è effettivamente testo - devo anche controllare che non ci siano spazi prima e dopo - trim elimina gli spazi
     const textLength = textArea.value.trim().length;
     // alert(textLength);
-    if(textLength > 0) {
+    if (textLength > 0) {
         talk();
-}});
+    }
+});
 
 // Funzione per far parlare la paperella
 function talk() {
@@ -43,24 +44,24 @@ function talk() {
 
     // Voce femminile
     // let femaleVoice;
-    
-    // HO FATTO CASINO -> SISTEMARE  
-    // if((function(voice){
-    //     if(voice.name.includes('Elsa') || voice.name.includes('Alice')) {
-    //         return true;
-    //     }else {
-    //         return false;
-    //     }
-    //     }) == true) {
-    //     utterance.voice = femaleVoice;
-    // }
+
+    const femaleVoice = voices.find(function (voice) {
+        if (voice.name.includes('Elsa') || voice.name.includes('Federica')) {
+            return true;
+        }
+    });
+
+    if(femaleVoice != null){
+        utterance.voice = femaleVoice;
+        window.alert(utterance.voice);
+    }
 
     // Facciamo parlare la paperella
     speechSynthesis.speak(utterance);
     // Su desktop parla al maschile, su mobile al femminile
 
     // Quando la paperella inizia a parlare
-    utterance.addEventListener('start', function(){
+    utterance.addEventListener('start', function () {
         // Mentre la paperella parla devo bloccare tutti gli elementi che comandano l'app, altrimenti si potrebbero creare dei bug
         textArea.disabled = true;
         pitchBar.disabled = true;
@@ -71,7 +72,7 @@ function talk() {
     });
 
     // Quando la paperella finisce di parlare
-    utterance.addEventListener('end', function(){
+    utterance.addEventListener('end', function () {
         // Sblocco i comandi
         textArea.disabled = false;
         pitchBar.disabled = false;
