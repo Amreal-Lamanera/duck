@@ -42,13 +42,18 @@ function talk() {
     utterance.pitch = pitch;
 
     // Voce femminile
-    const femaleVoice = voices.find(function(voice){
-        if(voice.name.includes('Elsa') || voice.name.includes('Alice')) {
-            return true;
-        }
-    });
-
-    utterance.voice = femaleVoice;
+    let femaleVoice;
+    
+    // HO FATTO CASINO -> SISTEMARE  
+    // if((function(voice){
+    //     if(voice.name.includes('Elsa') || voice.name.includes('Alice')) {
+    //         return true;
+    //     }else {
+    //         return false;
+    //     }
+    //     }) == true) {
+    //     utterance.voice = femaleVoice;
+    // }
 
     // Facciamo parlare la paperella
     speechSynthesis.speak(utterance);
