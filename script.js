@@ -58,9 +58,6 @@ function talk() {
 
     // Facciamo parlare la paperella
     speechSynthesis.speak(utterance);
-
-    window.alert(voices);
-
     // Su desktop parla al maschile, su mobile al femminile
 
     // Quando la paperella inizia a parlare
