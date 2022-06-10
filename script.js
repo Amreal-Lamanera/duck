@@ -63,6 +63,7 @@ function talk() {
     // Quando la paperella inizia a parlare
     utterance.addEventListener('start', function () {
         // Mentre la paperella parla devo bloccare tutti gli elementi che comandano l'app, altrimenti si potrebbero creare dei bug
+        window.alert("EVENTO CLASSE TALKING! pt1");
         textArea.disabled = true;
         pitchBar.disabled = true;
         playButton.disabled = true;
@@ -74,6 +75,7 @@ function talk() {
     // Quando la paperella finisce di parlare
     utterance.addEventListener('end', function () {
         // Sblocco i comandi
+        window.alert("EVENTO CLASSE TALKING! pt2");
         textArea.disabled = false;
         pitchBar.disabled = false;
         playButton.disabled = false;
