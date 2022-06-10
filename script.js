@@ -46,7 +46,7 @@ function talk() {
     // let femaleVoice;
 
     const femaleVoice = voices.find(function (voice) {
-        if (voice.name.includes('Elsa') || voice.name.includes('Federica')) {
+        if (voice.name.includes('Elsa')) {
             return true;
         }
     });
